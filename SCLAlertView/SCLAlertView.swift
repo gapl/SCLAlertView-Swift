@@ -415,7 +415,9 @@ public class SCLAlertView: UIViewController {
         
         // Alert colour/icon
         viewColor = UIColor()
-        SCLAlertViewStyleKit.fillColor = UIColorFromRGB(colorTextButton!)
+        if let colorTextButton = colorTextButton {
+            SCLAlertViewStyleKit.fillColor = UIColorFromRGB(colorTextButton)
+        }
         var iconImage: UIImage?
         
         // Icon style
