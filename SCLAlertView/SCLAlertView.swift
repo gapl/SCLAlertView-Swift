@@ -415,6 +415,7 @@ public class SCLAlertView: UIViewController {
         
         // Alert colour/icon
         viewColor = UIColor()
+        SCLAlertViewStyleKit.fillColor = UIColorFromRGB(colorTextButton!)
         var iconImage: UIImage?
         
         // Icon style
@@ -554,6 +555,9 @@ public class SCLAlertView: UIViewController {
 
 class SCLAlertViewStyleKit : NSObject {
     
+    // Fill color for icons
+    static var fillColor = UIColor.whiteColor()
+    
     // Cache
     struct Cache {
         static var imageOfCheckmark: UIImage?
@@ -592,8 +596,7 @@ class SCLAlertViewStyleKit : NSObject {
         checkmarkShapePath.addCurveToPoint(CGPointMake(73.25, 14.05), controlPoint1: CGPointMake(75.52, 20.75), controlPoint2: CGPointMake(75.7, 16.65))
         checkmarkShapePath.closePath()
         checkmarkShapePath.miterLimit = 4;
-        
-        UIColor.whiteColor().setFill()
+        SCLAlertViewStyleKit.fillColor.setFill()
         checkmarkShapePath.fill()
     }
     
@@ -606,7 +609,7 @@ class SCLAlertViewStyleKit : NSObject {
         crossShapePath.addLineToPoint(CGPointMake(70, 70))
         crossShapePath.lineCapStyle = CGLineCap.Round;
         crossShapePath.lineJoinStyle = CGLineJoin.Round;
-        UIColor.whiteColor().setStroke()
+        SCLAlertViewStyleKit.fillColor.setStroke()
         crossShapePath.lineWidth = 14
         crossShapePath.stroke()
     }
@@ -643,15 +646,11 @@ class SCLAlertViewStyleKit : NSObject {
         noticeShapePath.addCurveToPoint(CGPointMake(72, 48.54), controlPoint1: CGPointMake(71.81, 51.29), controlPoint2: CGPointMake(72, 49.72))
         noticeShapePath.closePath()
         noticeShapePath.miterLimit = 4;
-        
-        UIColor.whiteColor().setFill()
+        SCLAlertViewStyleKit.fillColor.setFill()
         noticeShapePath.fill()
     }
     
     class func drawWarning() {
-        // Color Declarations
-        let greyColor = UIColor(red: 0.236, green: 0.236, blue: 0.236, alpha: 1.000)
-        
         // Warning Group
         // Warning Circle Drawing
         let warningCirclePath = UIBezierPath()
@@ -666,8 +665,7 @@ class SCLAlertViewStyleKit : NSObject {
         warningCirclePath.addCurveToPoint(CGPointMake(40.94, 63.39), controlPoint1: CGPointMake(44.53, 64.18), controlPoint2: CGPointMake(42.83, 63.39))
         warningCirclePath.closePath()
         warningCirclePath.miterLimit = 4;
-        
-        greyColor.setFill()
+        SCLAlertViewStyleKit.fillColor.setFill()
         warningCirclePath.fill()
         
         
@@ -686,15 +684,10 @@ class SCLAlertViewStyleKit : NSObject {
         warningShapePath.addCurveToPoint(CGPointMake(46.23, 4.26), controlPoint1: CGPointMake(48.5, 7.01), controlPoint2: CGPointMake(47.74, 5.44))
         warningShapePath.closePath()
         warningShapePath.miterLimit = 4;
-        
-        greyColor.setFill()
         warningShapePath.fill()
     }
     
     class func drawInfo() {
-        // Color Declarations
-        let color0 = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
-        
         // Info Shape Drawing
         let infoShapePath = UIBezierPath()
         infoShapePath.moveToPoint(CGPointMake(45.66, 15.96))
@@ -713,14 +706,11 @@ class SCLAlertViewStyleKit : NSObject {
         infoShapePath.addCurveToPoint(CGPointMake(48, 35.26), controlPoint1: CGPointMake(44.4, 27.67), controlPoint2: CGPointMake(48, 31.08))
         infoShapePath.addLineToPoint(CGPointMake(48, 69.41))
         infoShapePath.closePath()
-        color0.setFill()
+        SCLAlertViewStyleKit.fillColor.setFill()
         infoShapePath.fill()
     }
     
     class func drawEdit() {
-        // Color Declarations
-        let color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
-        
         // Edit shape Drawing
         let editPathPath = UIBezierPath()
         editPathPath.moveToPoint(CGPointMake(71, 2.7))
@@ -760,7 +750,7 @@ class SCLAlertViewStyleKit : NSObject {
         editPathPath.closePath()
         editPathPath.miterLimit = 4;
         editPathPath.usesEvenOddFillRule = true;
-        color.setFill()
+        SCLAlertViewStyleKit.fillColor.setFill()
         editPathPath.fill()
     }
     
